@@ -6,12 +6,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # %% Caricamento dati
-df_2002_2024 = pd.read_csv('Progetto4/outputModelling/Popolazione_residente_2002-2024.csv')
+df_2002_2024 = pd.read_csv('../outputModelling/Popolazione_residente_2002-2024.csv')
 
 # %% Creo variabili di lag, facenti riferimento ai dati degli anni precedenti
-df_2002_2024['Popolazione_t-1_maschi'] = df_2002_2024.groupby('Età')['Totale maschi'].shift(1)
-df_2002_2024['Popolazione_t-1_femmine'] = df_2002_2024.groupby('Età')['Totale femmine'].shift(1)
-df_2002_2024['Popolazione_t-1_totale'] = df_2002_2024.groupby('Età')['Totale'].shift(1)
+df_2002_2024['Totale maschi -1'] = df_2002_2024.groupby('Età')['Totale maschi'].shift(1)
+df_2002_2024['Totale femmine -1'] = df_2002_2024.groupby('Età')['Totale femmine'].shift(1)
+df_2002_2024['Totale -1'] = df_2002_2024.groupby('Età')['Totale'].shift(1)
 
 df_2003_2024 = df_2002_2024.dropna()
 
