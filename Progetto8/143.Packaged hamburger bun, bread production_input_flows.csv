@@ -1,0 +1,25 @@
+Type of flow|Flow|Amount|Unit|SD^2 or 2*SD|Description|"Data definition: 
+- Estimated (E) - value estimated from assumed data / based on literature data
+- Estimated based on measured value (EM) - value estimated from a certain base value (e.g. distribution of total electricity consumption between various phases based on an assumption)
+- Calculated (C) - value calculated from measured/certain value
+- Measured (M) - measured value reported in official company document (e.g. electricity consumption value from utility bill)"|Evaluation of individual data as indicated in the Pedigree Matrix
+Resources from the environment|||||||
+Energy input|Methane|2.884950088599485|MJ|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports and appropriately corrected||
+Energy input_2|Electricity from grid|0.13514603010762713|kWh|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports and appropriately corrected||
+Energy input_3|electricity from photovoltaic modules|0.03190152098515038|kWh|1.0881805085335583|(2,3,1,1,1,na.) Data calculated from company reports and appropriately corrected||
+Ancillary material input|Flour type 0|0.6610534215836472|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports||
+Ancillary material input_2|Semolina|0|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports||
+Ancillary material input_3|Bran|0|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports||
+Ancillary material input_4|Seed oil|0.03351494619917092|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports||
+Ancillary material input_5|Additives|0.01155687799971411|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports||
+Ancillary material input_6|Sucrose|0.07280833139819891|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports||
+Ancillary material input_7|Dextrose|0|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports||
+Ancillary material input_8|Gluten|0|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports||
+Ancillary material input_9|Salt|0.016179629199599754|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports||
+Ancillary material input_10|Yeast|0.031203570599228105|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports||
+Ancillary material input_11|Starter yeast|0|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports||
+Ancillary material input_12|Sesame|0.01964669259951399|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports||
+Ancillary material input_13|Road transport|126.89452043686093|kgkm|2.1112106491146307|(4,4,1,4,3,na.) Data assumed (150 km)||
+Intermediate material input|Packaging PP|0.020000000000000007|kg|1.0888159599559692|(2,3,1,2,1,na.) Data calculated from company reports and appropriately corrected||
+Intermediate material input_2|Packaging PP|0|kg|1.0888159599559692|(2,3,1,2,1,na.) Data calculated from company reports and appropriately corrected||
+Water input (potable, surface water bodies, groundwater)|Water|0.31088001819230954|L|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports and appropriately corrected||

@@ -1,0 +1,12 @@
+Type of flow|Flow|Amount|Unit|SD^2 or 2*SD|Description
+Product|Burger|1.0000000000000002|kg||Data calculated from company reports and appropriately corrected
+Co-product|||||
+Emissions to air|Water lost during cooking|0.06217600363846191|L|1.5681449998445471|(4,3,1,1,4,na.) Data calculated from company reports and appropriately corrected
+Emissions to water (groundwater)|||||
+Emissions to water (river)|||||
+Emissions to soil|||||
+Waste to treatment|Scrap (wet)|0.09027150940699125|kg|1.0714359004449265|(1,3,1,1,1,na.) Data calculated from company reports and appropriately corrected
+Waste to treatment_2|Scrap (after cooking)|0.004395974725929008|kg|1.5681449998445471|(4,3,1,1,4,na.) Data calculated from company reports and appropriately corrected
+Waste to treatment_3|Waste packaging|126.89452043686093|kg|1.0912946190628323|(2,2,1,2,2,na.) Data calculated from company reports and appropriately corrected
+Waste to treatment_4|Waste packaging|0|kg|1.0912946190628323|(2,2,1,2,2,na.) Data calculated from company reports and appropriately corrected
+Other output with destination|||||

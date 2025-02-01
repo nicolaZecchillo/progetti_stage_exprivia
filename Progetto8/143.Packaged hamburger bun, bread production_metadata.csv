@@ -1,0 +1,50 @@
+Key|Value|ger2|ger1
+Name (Base name; Treatment, standards, routes; Mix and location types; Quantitative product or process properties)|Packaged hamburger bun, bread production, sector company|Key data set information|PROCESS INFORMATION
+Synonyms|Produzione di panini per hamburger confezionati, aziende del settore|Key data set information|PROCESS INFORMATION
+Class name_1|2 Materials production|Key data set information|PROCESS INFORMATION
+Class name_2|2.11 Food and renewable raw materials|Key data set information|PROCESS INFORMATION
+Type of quantitative reference|Reference flow(s)|Quantitative reference|PROCESS INFORMATION
+Reference flow(s):|3,263,950.63 kg|Quantitative reference|PROCESS INFORMATION
+Reference year|2022|Time representativeness|PROCESS INFORMATION
+Data set valid until|2029|Time representativeness|PROCESS INFORMATION
+Time representativeness description|The data associated with the plant's production in the year 2022.|Time representativeness|PROCESS INFORMATION
+Location|IT|Geographical representativeness|PROCESS INFORMATION
+Geographical representativeness description|The data relate to the production of packaged hamburger bread, made from common wheat flour, of a medium-sized company in Southern Italy. Finished products are sold throughout the country and are also produced for other nationally important brands.|Geographical representativeness|PROCESS INFORMATION
+Technology description including background system|The reference technology for energy consumption considers both renewable and non-renewable primary resources installed in plants. Data is provided in aggregate form for the reference year. Furthermore, the total consumption of the entire plant in the reference year was approximately 1,450,000 kWh. The installation of solar panels saved 11.59% energy from the grid ( about 190,000 kWh to be added to the consumption of electricity from the grid).|Technological representativeness|PROCESS INFORMATION
+Technical purpose of product or process|LCA|Technological representativeness|PROCESS INFORMATION
+Type of dataset|Unit process, single operation|LCI method and allocation|MODELLING AND VALIDATION
+LCI method principle|Attributional|LCI method and allocation|MODELLING AND VALIDATION
+LCI method approaches|Not applicable|LCI method and allocation|MODELLING AND VALIDATION
+Deviations from LCI method approaches/explanations|The bread production system does not generate co-products.|LCI method and allocation|MODELLING AND VALIDATION
+Date cut-off and completeness principles|Production of equipment and infrastructures is not included except for the background system.|Data sources treatment and representativeness|MODELLING AND VALIDATION
+Data selection and combination principles|The company produces bread with both common wheat flour and durum wheat semolina. The production of hamburger buns in the reference year is 3,263,950.63 kg. Data on the consumption of electricity from the grid, from photovoltaic panels and thermal energy is provided in an aggregated manner. it was possible for the consumption of electricity and thermal energy from the grid to be attributed to the different types of output products. The consumption of electricity from photovoltaics, on the other hand, is equally distributed for the different types of bread produced. Transport of raw materials was assumed equal to 150 km.|Data sources treatment and representativeness|MODELLING AND VALIDATION
+Data treatment and extrapolations principles|For the quantification of the inputs, the recipe was used to identify the quantities of raw materials needed for production. Electricity and gas consumption are provided in aggregate, but it was possible to identify the consumption required for the production of this product alone.  For the definition of the outputs, it is considered that, in addition to the final product, part of the mass is lost through evaporation as a result of the baking process. This quantity was calculated using multiplication factors provided by the company. The remaining part is attributed to the material losses of the process: burnt dough, waste, residues from baking, which will serve as secondary raw material for the production of breadcrumbs in the company.|Data sources treatment and representativeness|MODELLING AND VALIDATION
+Data collection period|2022|Data sources treatment and representativeness|MODELLING AND VALIDATION
+Data sources(s) used for this data set|Common wheat milling company report; Company report on grid and photovoltaic energy consumption; Durum wheat milling company report; https://www.snam.it/it/stoccaggio/strumenti/convertitore.html.|Data sources treatment and representativeness|MODELLING AND VALIDATION
+Completeness product model|All relevant flows quantified|Completeness|MODELLING AND VALIDATION
+Type of review|Indipendent external review|Validation|MODELLING AND VALIDATION
+Review details|"Inventory data quality validation at the conclusion of the Project ""Italian Life Cycle Inventory Database of Agri-Food Products"" (ILCIDAF) was reviewed according to ILCIDAF methodology. The following criteria were evaluated for each dataset: 1. Reliability; 2. Completeness; 3. Temporal correlation; 4. Geographical correlation; 5. Futher technological correlation."|Validation|MODELLING AND VALIDATION
+Subsequent rewiew comments|Based on the evidences collected during the review activities, considering the goal and scope of the study and of the critical review activities, it can be stated that the report and the datasets produced are in line with the reference standards ISO 14040:2006 and ISO 14044:2006.|Validation|MODELLING AND VALIDATION
+Data Quality Indicators|- Reliability: Very Good (2), - Completeness: Sufficient (4), - Temporal correlation: Excellent (1), - Geographical correlation: Very Good - Good (between 2 and 3), - Futher tecnological correlation: Excellent - Very Good (between 1 and 2).|Validation|MODELLING AND VALIDATION
+Reviewer name and institution|Spin Life srl (Spin Off dell'Università degli Studi di Padova)|Validation|MODELLING AND VALIDATION
+Compliance system name_1|ISO 14040|Compliance declaration|MODELLING AND VALIDATION
+Approval of overall compliance_1|Fully compliant|Compliance declaration|MODELLING AND VALIDATION
+Nomenclatures compliance_1|Not defined|Compliance declaration|MODELLING AND VALIDATION
+Methodological compliance_1|Fully compliant|Compliance declaration|MODELLING AND VALIDATION
+Review compliance_1|Fully compliant|Compliance declaration|MODELLING AND VALIDATION
+Documentation compliance_1|Fully compliant|Compliance declaration|MODELLING AND VALIDATION
+Quality compliance_1|Fully compliant|Compliance declaration|MODELLING AND VALIDATION
+Compliance system name_2|ISO 14044|Compliance declaration|MODELLING AND VALIDATION
+Approval of overall compliance_2|Fully compliant|Compliance declaration|MODELLING AND VALIDATION
+Nomenclatures compliance_2|Not defined|Compliance declaration|MODELLING AND VALIDATION
+Methodological compliance_2|Fully compliant|Compliance declaration|MODELLING AND VALIDATION
+Review compliance_2|Fully compliant|Compliance declaration|MODELLING AND VALIDATION
+Documentation compliance_2|Fully compliant|Compliance declaration|MODELLING AND VALIDATION
+Quality compliance_2|Fully compliant|Compliance declaration|MODELLING AND VALIDATION
+Reference to commissioner|MUR - Ministero dell'Università e della Ricerca della Repubblica Italiana|Commissioner and goal|ADMINISTRATIVE INFORMATION
+Project|PRIN 2017: 2017EC9WF2 - Promoting Agri-Food Sustainability: Development of an Italian Life Cycle Inventory Database of Agri-Food Products|Commissioner and goal|ADMINISTRATIVE INFORMATION
+Data set generator/modeller|Università degli Studi di Bari Aldo Moro - Dipartimento Jonico - Taranto (Italia)|Data set generator/modeller|ADMINISTRATIVE INFORMATION
+Copyright|true|Publication and ownership|ADMINISTRATIVE INFORMATION
+License type|free of charge for all users and uses|Publication and ownership|ADMINISTRATIVE INFORMATION
+Owner of data set|Università degli Studi di Bari Aldo Moro - Dipartimento Jonico - Taranto (Italia)|Publication and ownership|ADMINISTRATIVE INFORMATION
+Access and use restriction|Type of license: Open Database Licence (ODbL)|Publication and ownership|ADMINISTRATIVE INFORMATION
