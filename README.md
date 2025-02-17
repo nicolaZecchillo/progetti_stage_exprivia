@@ -8,15 +8,16 @@
  - Visualizzazione grafica su dashboard ottenuta tramite utilizzo di Apache Superset e creazione di filtro che rende la tabella dinamica.
 3. Progetto3:
  - Analisi del dataset scaricabile al link https://www.kaggle.com/datasets/ahmadrafiee/airports-airlines-planes-and-routes-update-2024
- resource=download a scopo creazione di diagramma ER, definizione di chiavi primarie ed esterne, studio sul tipo di relazioni e definizione del    livello di normalizzazione al fine di rendere tutto 3NF.
+ resource=download a scopo creazione di diagramma ER, definizione di chiavi primarie ed esterne, studio sul tipo di relazioni e definizione del    livello di normalizzazione al fine di rendere tutto 3NF. (da completare)
 4. Progetto4 (da completare):
  - Utilizzato e modellato le tabelle facenti riferimento i dati della popolazione per cercare di costruire un modello previsionale effettuando vari test su diverse metodologie di ML
-5. Progetto5 (da completare):
+5. Progetto5:
  - Modellato dataset https://www.istat.it/wp-content/uploads/2023/05/Tavole-Dati-Meteoclimatici-Anno-2021.xlsx, dividendolo in due file .csv contenenti rispettivamente i dati delle temperature medie e quelli delle precipitazioni, sostituendo i valori delle righe totalmente vuote con le medie anno per anno delle provincie della stessa regione, utilizzando il campo 'parent_id' della tabella dim_geografia creata nel Progetto2
- - (da implementare) Sostituzione valori mancanti attraverso modello di ML
-6. Esercizi in SQL:
- - Tramite utilizzo di SQL Server su database NorthWind su diversi livelli di difficoltà.
+ - Sostituzione valori mancanti attraverso modello di ML Random Forest
+6. Progetto6:(non iniziato)
 7. Progetto8:
  - Conversione del file '143.Packaged hamburger bun, bread production.xlsx' in formato .csv tramite utilizzo di codice Python in modo dinamico
 8. Progetto10:
- - Ottenimento del link di download del file 'Confini amministrativi' più recente e del link del pdf contenente la Descrizione dei dati dal sito https://www.istat.it/notizia/confini-delle-unita-amministrative-a-fini-statistici-al-1-gennaio-2018-2/ attraverso l'utilizzo delle librerie BeautifulSoup e urlopen
+ - Ottenimento del link di download del file 'Confini amministrativi' più recente e del link del pdf contenente la Descrizione dei dati dal sito https://www.istat.it/notizia/confini-delle-unita-amministrative-a-fini-statistici-al-1-gennaio-2018-2/ attraverso l'utilizzo delle librerie BeautifulSoup e urlopen + tentativi di recupero informazioni tabelle in formato pd.DataFrame
+9. Esercizi in SQL:
+ - Tramite utilizzo di SQL Server su database NorthWind su diversi livelli di difficoltà.

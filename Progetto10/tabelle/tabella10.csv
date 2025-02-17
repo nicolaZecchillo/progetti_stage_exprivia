@@ -1,0 +1,6 @@
+DENOMINAZIONE   VARIABILE,DESCRIZIONE CAMPO  NOTE,
+Coordinata  Y  del  centroide  della  sezione  che  contiene  il  Municipio.,Sistema  di  riferimento  geografico  ED  1950  (fuso 32N).,Y_ED50_32N
+Coordinata  X  del  centroide  della  sezione  che  contiene  il  Municipio.,Sistema di riferimento geografico WGS 1984  (fuso 32N).,X_WGS84_32N
+Coordinata  Y  del  centroide  della  sezione  che  contiene  il  Municipio.,Sistema di riferimento geografico WGS 1984  (fuso 32N).,Y_WGS84_32N
+Altitudine  minima  sul  livello  del mare.,,ALTITUDINE_MINIMA
+Altitudine  massima  sul  livello  del mare.,,ALTITUDINE_MASSIMA

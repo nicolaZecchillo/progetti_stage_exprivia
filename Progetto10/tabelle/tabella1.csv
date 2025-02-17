@@ -1,0 +1,11 @@
+DENOMINAZIONE   VARIABILE,DESCRIZIONE CAMPO,NOTE
+Codice  numerico  ripartizione  geografica  modalità).,"Codice  Istat  della  ripartizione  geografica  che  suddivide  il  territorio  nazionale  in:  1)  Nord- ovest, 2) Nord-est, 3) Centro, 4) Sud e 5) Isole.",COD_RIP della  (5
+Codice  numerico  che  identifica  univocamente  le  20  regioni  italiane sul territorio nazionale.,,COD_REG
+Codice  numerico  che  identifica  univocamente  la  provincia  sul  territorio nazionale.,"A partire dal 2015, con l'entrata in vigore delle  città  metropolitane,  il  codice  delle  provincia  cessa  la  sua  funzione  amministrativa  e  acquisisce lo ""status"" di codice statistico.",COD_PROV
+metropolitana  (tre  caratteri  in  formato  numerico)  ottenuto  sommando  il  valore  200  corrispondente  codice  della  provincia.,"metropolitane  nel  2015  (Torino,  Milano,  Genova,  Venezia,  Bologna,  Firenze,  Roma,  Napoli  e  Bari)  a  partire  dal  2017  e  con  riferimento a tutte le statistiche ufficiali, sono  adottati  i  codici  statistici  delle  città  metropolitane corrispondenti alle ex-provincie  di  Reggio  di  Calabria,  Catania,  Messina  e  Palermo, e della Città metropolitana di Cagliari  composta  da  17  comuni  provenienti  dalla  soppressa Provincia di Cagliari.",COD_CM (1) al
+Codice  della  provincia  o  della  città metropolitana,,COD_PCM (2)
+Codice  numerico  che  identifica  univocamente  il  Comune  sul  territorio nazionale.,"Il  codice  Istat  del  comune  si  ottiene  dalla  concatenazione  del  codice  della  provincia  (COD_PROV),  con  il  codice  progressivo  comunale di tre digit.",PRO_COM
+Codice  alfanumerico  che  identifica  univocamente  Comune sul territorio nazionale.,"Il  codice  Istat  del  comune  di  6  caratteri  si  ottiene  dalla  concatenazione  del  codice  alfanumerico  di  tre  digit  della  provincia  (COD_PROV),  con  il  codice  progressivo  comunale di tre digit.",PRO_COM_T  il
+Denominazione del Comune.,,COMUNE
+Denominazione  del  Comune  in  lingua diversa dall'italiano.,,COMUNE_A
+Popolazione legale alla data del  censimento.,,POP_CCCC (3)

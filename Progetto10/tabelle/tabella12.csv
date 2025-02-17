@@ -1,0 +1,8 @@
+DENOMINAZIONE   VARIABILE,DESCRIZIONE CAMPO,NOTE
+COD_RIP,Codice  numerico  della  ripartizione  geografica  (5  modalità).,"Codice  Istat  della  ripartizione  geografica  che  suddivide  il  territorio  nazionale  in:  1)  Nord- ovest, 2) Nord-est, 3) Centro, 4) Sud e 5) Isole."
+DEN_RIP,Denominazione  della  Ripartizioni geografiche.,
+COD_REG,Codice  numerico  che  identifica  univocamente  le  20  regioni  italiane sul territorio nazionale.,
+DEN_REG,Denominazione  delle  regioni  italiane.,
+COD_PROV,Codice  numerico  che  identifica  univocamente  la  provincia  nell'ambito  del  territorio  nazionale.,
+DEN_PROV,Denominazione della provincia.,
+SIGLA,"Sigla  automobilistica  delle  province,  delle  città  metropolitane  o  dei  liberi  consorzi.",

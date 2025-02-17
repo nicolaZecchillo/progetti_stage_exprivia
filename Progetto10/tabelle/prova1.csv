@@ -1,0 +1,60 @@
+DENOMINAZIONE VARIABILE,DESCRIZIONE CAMPO,NOTE
+COD_RIP,"Codice 
+numerico 
+della","Codice 
+Istat  della  ripartizione  geografica  che"
+COD_RIP,"ripartizione 
+geografica 
+(5","suddivide 
+il  territorio  nazionale 
+in:  1)  Nord-"
+COD_REG,modalità).,"ovest, 2) Nord-est, 3) Centro, 4) Sud e 5) Isole."
+COD_REG,Codice  numerico  che  identifica,
+COD_REG,"univocamente 
+le 
+20 
+regioni",
+COD_PROV,italiane sul territorio nazionale.,
+COD_PROV,Codice  numerico  che  identifica,"A partire dal 2015, con l'entrata in vigore delle"
+COD_PROV,"univocamente 
+la  provincia  sul","città  metropolitane, 
+il  codice  delle  provincia"
+COD_PROV,,
+COD_CM (1),territorio nazionale.,"cessa 
+la 
+sua 
+funzione 
+amministrativa 
+e"
+COD_CM (1),,"acquisisce lo ""status"" di codice statistico."
+COD_CM (1),"Codice 
+Istat 
+della 
+città",Con  l'entrata  in  vigore  delle  prime  nove  città
+COD_CM (1),"metropolitana  (tre  caratteri 
+in","metropolitane 
+nel 
+2015 
+(Torino,  Milano,"
+COD_CM (1),"formato 
+numerico) 
+ottenuto","Genova,  Venezia,  Bologna, 
+Firenze, 
+Roma,"
+COD_CM (1),"sommando 
+il 
+valore 
+200 
+al","Napoli  e  Bari) 
+a  partire  dal  2017  e 
+con"
+COD_CM (1),"corrispondente 
+codice 
+della","riferimento  a  tutte  le  statistiche  ufficiali,  sono"
+COD_CM (1),provincia.,"adottati 
+i 
+codici 
+statistici 
+delle 
+città"
+,,metropolitane corrispondenti alle  ex-provincie

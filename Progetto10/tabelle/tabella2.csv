@@ -1,0 +1,5 @@
+DENOMINAZIONE   VARIABILE,DESCRIZIONE CAMPO,NOTE
+Capoluogo di provincia.,Indicazione del comune capoluogo di provincia  (1=Comune  capoluogo;  0=Comune  non  è  capoluogo).,CC_P  (4)
+Capoluogo  di  provincia  o  città  metropolitana.,Indicazione del comune capoluogo di provincia  o  città  metropolitana  (1=Comune  capoluogo;  0=Comune non è capoluogo).,CC_P_CM  (2)
+Codice  numerico  che  identifica  univocamente  le  Unità  territoriali  sovracomunali  territorio nazionale.,"Codice  della  provincia,  città  metropolitana,  libero  consorzio  di  comuni  o  ex  provincia  del  Friuli-Venezia  Giulia  di  appartenenza  del  comune.  Sostituisce il COD_PCM.",COD_UTS  (5) sul
+Capoluogo  di  provincia  o  città  metropolitana.,"Indicazione del comune capoluogo di provincia,  libero consorzio di comuni e città metropolitana  (1=Comune  capoluogo;  0=Comune  non  è  capoluogo).",CC_UTS   (5)

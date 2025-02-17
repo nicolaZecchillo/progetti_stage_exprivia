@@ -1,0 +1,13 @@
+DENOMINAZIONE   VARIABILE  DESCRIZIONE CAMPO,,NOTE
+COD_RIP Codice  ripartizione  modalità).,,"numerico  della  geografica  (5  Codice  Istat  della  ripartizione  geografica  che  suddivide  il  territorio  nazionale  in:  1)  Nord- ovest, 2) Nord-est, 3) Centro, 4) Sud e 5) Isole."
+COD_REG Codice  numerico  che  identifica  univocamente  le  italiane sul territorio nazionale.,,20  regioni
+COD_PROV Codice  numerico  che  identifica  univocamente  la  nell'ambito  del  nazionale.,"A partire dal 2015, con l'entrata in vigore delle  città  metropolitane,  il  codice  delle  provincia  cessa  la  sua  funzione  amministrativa  e  acquisisce lo ""status"" di codice statistico.",provincia  territorio
+COD_CM (1) Codice della città metropolitana  (tre  caratteri  in  formato  numerico)  ottenuto  sommando  il  valore  200  al  corrispondente  codice della provincia.,"Con  l'entrata  in  vigore  delle  prime  nove  città  metropolitane  nel  2015  (Torino,  Milano,  Genova,  Venezia,  Bologna,  Firenze,  Roma,  Napoli  e  Bari)  a  partire  dal  2017  e  con  riferimento  a  tutte  le  statistiche  ufficiali  sono  adottati  i  codici  statistici  delle  città  metropolitane, corrispondenti alle ex-provincie  di  Reggio  di  Calabria,  Catania,  Messina  e  Palermo, e della Città metropolitana di Cagliari  composta  da  17  comuni  provenienti  dalla",
+COD_PCM (2) Codice  della  provincia  o  della  città metropolitana.,,
+COD_UTS  (5) Codice  numerico  che  identifica  univocamente  le  territoriali  sovracomunali  territorio nazionale.,Friuli-Venezia Giulia.,"Unità  sul  Codice  della  provincia,  città  metropolitana,  libero  consorzio  di  comuni  o  ex  provincia  del"
+Denominazione della provincia.,,DEN_PROV
+DEN_CM  metropolitana.,,
+Denominazione  della  provincia  o della città metropolitana.,Denominazione  della  provincia  o della città metropolitana.,Denominazione  della  provincia  o della città metropolitana.
+DEN_UTS  (5) Denominazione  delle  territoriali sovracomunali.,,Unità
+"SIGLA  Sigla  automobilistica  province,  delle  metropolitane  o  dei  consorzi.",,delle  città  liberi
+TIPO_UTS  (5) Campo  alfanumerico  individua  il  tipo  di  Unità  territoriale sovracomunale.,che,Le Unità territoriali sovracomunali sono: la Città  metropolitana;  la  Provincia  autonoma;  l'Unità  sovracomunale  di  tipo  non  amministrativa;  la  Provincia; il Libero consorzio di comuni.

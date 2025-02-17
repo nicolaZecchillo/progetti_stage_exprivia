@@ -1,0 +1,4 @@
+DENOMINAZIONE   VARIABILE,DESCRIZIONE CAMPO,DESCRIZIONE CAMPO,NOTE
+Codice  modalità).,numerico  ripartizione,"Codice  Istat  della  ripartizione  geografica  che  suddivide  il  territorio  nazionale  in:  1)  Nord- ovest, 2) Nord-est, 3) Centro, 4) Sud e 5) Isole.",COD_RIP della  geografica  (5
+Codice  numerico  che  identifica  univocamente  le  20  regioni,Codice  numerico  che  identifica  univocamente  le  20  regioni,,COD_REG
+Denominazione della Regione.,Denominazione della Regione.,,DEN_REG

@@ -1,0 +1,8 @@
+DENOMINAZIONE   VARIABILE,DESCRIZIONE CAMPO,NOTE
+Codice  ripartizione  modalità).,"Codice  Istat  della  ripartizione  geografica  che  suddivide  il  territorio  nazionale  in:  1)  Nord- ovest, 2) Nord-est, 3) Centro, 4) Sud e 5) Isole.",COD_RIP numerico  della  geografica  (5
+Codice  numerico  che  identifica  univocamente  le  20  regioni  italiane sul territorio nazionale.,,COD_REG
+Codice  numerico  che  identifica  univocamente  la  provincia  nell'ambito  del  territorio  nazionale.,"A partire dal 2015, con l'entrata in vigore delle  città  metropolitane,  il  codice  delle  provincia  cessa  la  sua  funzione  amministrativa  e  acquisisce lo ""status"" di codice statistico.",COD_PROV
+Codice  numerico  che  identifica  univocamente  il  Comune  territorio nazionale.,"Il  codice  Istat  del  comune  si  ottiene  dalla  concatenazione  del  codice  della  provincia  (COD_PROV),  con  il  codice  progressivo  comunale di tre digit.",PRO_COM  sul
+COD_ZIC (2021)  Codice  numerico  che  identifica  univocamente  la  contestazione  sul  nazionale.,"Classificate  tra  le  aree  speciali,  sono  zone  di  territorio contese tra due o più comuni che ne  rivendicano  la  proprietà.  Le  zone  in  contestazione  sono  assegnate,  solo  ai  fini  censuari,  ad  uno  dei  comuni  interessati  alla",COD_ZONA_C  zona  in  territorio
+DEN_ ZONA_C  DEN_ZIC (2021)  Denominazione  contestazione.,controversia.,della  zona  in
+Altitudine  delle  isole  metri slm).,,ALTITUDINE  Minima/Massima  amministrative  (in

@@ -1,0 +1,13 @@
+DENOMINAZIONE   VARIABILE,DESCRIZIONE CAMPO,NOTE
+Codice numerico che identifica  univocamente  il  Comune  sul  territorio nazionale.,"Il  valore  è  ottenuto  concatenando il codice  della  provincia  (COD_PROV),  con  il  codice  progressivo  comunale  di  tre  digit,  ed  è  riferito  alla  situazione  antecedente  alla  costituzione  delle  tre  nuove  province  di  Monza  e  della  Brianza,  Fermo  e  Barletta- Andria-Trani  ma  comprendente  le  quattro",PRO_COM_107
+"Codice  composto  da  quattro  caratteri,  il  primo  dei  quali  alfabetico e gli altri numerici.","Il  codice  è  assegnato  dall'Agenzia  del  territorio,  seguendo  l'ordinamento  alfabetico  crescente  dell'elenco  di  tutti  i  comuni  di  Italia,  indipendentemente  dalla  provincia di appartenenza.",CODICE_CATASTALE
+Denominazione del Comune.,,
+Codice  del  Sistema  locale  del  lavoro  (SLL)  definito  Censimento del 2001.,al,COD_SLL_2001
+Denominazione  del  Sistema  locale del lavoro (SLL) definito  al Censimento del 2001.,,DEN_SLL_2001
+Codice  che  identifica  se  il  comune è capoluogo del SLL di  appartenenza.,"Assume  valore  pari  a  1  se  è  capoluogo,  altrimenti 0.",
+"Superficie  territoriale  chilometri quadrati,  dei comuni  italiani al 9 ottobre 2011 (XV°  Censimento  generale  della  popolazione).",in  I  dati  sono  stimati  dai  poligoni  comunali  disegnati dal Sistema informativo geografico  dell'Istat.,in  I  dati  sono  stimati  dai  poligoni  comunali  disegnati dal Sistema informativo geografico  dell'Istat.
+Popolazione  residente  data  del  Censimento  21/10/2001.,alla  del,POP_2001
+Popolazione  residente  data  del  Censimento  9/10/2011.,alla  del,POP_2011
+Codice  della  sezione  di  censimento  che  contiene  il  Municipio al 9/10/2011.,,SEZ2011
+Indirizzo  della  sede  del  Municipio  (sede  della  Giunta  Comunale) al 9/10/2011.,,INDIRIZZO
+Coordinata  X  del  centroide  della  sezione  che  contiene  il  Municipio.,Sistema  di  riferimento  geografico  ED  1950  (fuso 32N).,X_ED50_32N

@@ -1,0 +1,8 @@
+DENOMINAZIONE   VARIABILE,DESCRIZIONE CAMPO,NOTE
+Codice  ripartizione  modalità).,"Codice  Istat  della  ripartizione  geografica  che  suddivide  il  territorio  nazionale  in:  1)  Nord- ovest, 2) Nord-est, 3) Centro, 4) Sud e 5) Isole.",COD_RIP numerico  della  geografica  (5
+Codice  numerico  che  identifica  univocamente  le  20  regioni  italiane sul territorio nazionale.,,COD_REG
+Codice  numerico  che  identifica  univocamente  la  provincia  nell'ambito  del  territorio  nazionale.,"A partire dal 2015, con l'entrata in vigore delle  città  metropolitane,  il  codice  delle  provincia  cessa  la  sua  funzione  amministrativa  e  acquisisce lo ""status"" di codice statistico.",COD_PROV
+Codice  numerico  che  identifica  univocamente  il  Comune  territorio nazionale.,"Il  codice  Istat  del  comune  si  ottiene  dalla  concatenazione  del  codice  della  provincia  (COD_PROV),  con  il  codice  progressivo  comunale di tre digit.",PRO_COM  sul
+Codice  numerico  che  identifica  univocamente  amministrativa  sul  nazionale.,"Classificate tra le aree speciali, sono porzioni di  territorio comunale circondate interamente dal  territorio di altro o altri comuni.",COD_IS_AMM  COD_ISAM  l'isola  territorio
+DEN_ IS_AMM  DEN_ISAM  Denominazione  amministrativa.,,dell'isola
+ALTITUDINE  Altitudine  delle  isole  metri slm).,,Minima/Massima  amministrative  (in

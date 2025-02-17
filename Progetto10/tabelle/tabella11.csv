@@ -1,0 +1,9 @@
+DENOMINAZIONE   VARIABILE,DESCRIZIONE CAMPO,NOTE
+Codice numerico che identifica  univocamente  le  20  regioni  italiane  sul  territorio  nazionale.,,COD_REG
+Codice numerico che identifica  univocamente la provincia sul  territorio nazionale.,"A  partire  dal  2015,  con  l'entrata  in  vigore  delle  città  metropolitane,  il  codice  delle  provincia  cessa  la  sua  funzione  amministrativa  e  acquisisce  lo  ""status""  di",COD_PROV
+Codice  alfanumerico  identifica  univocamente  Comune  sul  nazionale.,"Il  codice  Istat  del  comune  di  6  caratteri  si  ottiene  dalla  concatenazione  del  codice  alfanumerico  di  tre  digit  della  provincia  (COD_PROV),  con  il  codice  progressivo  comunale di tre digit.",PRO_COM_T  che  il  territorio
+Codice numerico che identifica  univocamente  il  Comune  sul  territorio nazionale.,"Il  codice  Istat  del  comune  è  ottenuto  concatenando  il  codice  della  provincia  (COD_PROV),  con  il  codice  progressivo  comunale di tre digit.",PRO_COM
+Denominazione del Comune.,,COMUNE
+Popolazione  residente  alla  data del Censimento del 1991  e 2001.,,POP_AAA
+Altitudine  minima  sul  livello  del mare.,,ALTITUDINE_MINIMA
+Altitudine  massima  sul  livello  del mare.,,ALTITUDINE_MASSIMA
