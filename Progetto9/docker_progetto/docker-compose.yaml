@@ -1,0 +1,41 @@
+services:
+  input_postgres:
+    image: postgres:12
+    restart: unless-stopped
+    container_name: input_postgres
+    hostname: input_postgres
+    environment:
+      POSTGRES_DB: 'input_db'
+      POSTGRES_USER: 'inputuser'
+      POSTGRES_PASSWORD: 'inputpassword'
+    ports:
+      - '5434:5432'
+    volumes:
+      - ./input_postgres_data:/var/lib/postgresql/data
+
+  output_postgres:
+    image: postgres:12
+    restart: unless-stopped
+    container_name: output_postgres
+    hostname: output_postgres
+    environment:
+      POSTGRES_DB: 'output_db'
+      POSTGRES_USER: 'outputuser'
+      POSTGRES_PASSWORD: 'outputpassword'
+    ports:
+      - '5435:5432'
+    volumes:
+      - ./output_postgres_data:/var/lib/postgresql/data
+
+  superset:
+    image: apache/superset:4.0.2
+    restart: unless-stopped
+    container_name: superset_progetto
+    hostname: superset_progetto
+    environment:
+      SUPERSET_SECRET_KEY: 'secretkey'
+      SUPERSET_FEATURE_ENABLE_JAVASCRIPT_CONTROLS: 'true'
+    ports:
+      - '8088:8088'
+    volumes:
+      - ./superset_home:/app/superset_homes
