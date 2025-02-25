@@ -42,7 +42,6 @@ comuni['parent_id'] = comuni['parent_id'] + num_regioni + num_ripartizioni
 dim_geografia = pd.concat([ripartizioni, regioni, province, comuni], ignore_index=True)
 dim_geografia['id'] = range(1, len(dim_geografia) + 1)
 dim_geografia = dim_geografia[['id','parent_id','tipo_geografico','cod_geografico','den_geografica']]
-print(dim_geografia)
 # %% Import dei dati per ogni divisione geografica
 dati_ripartizioni = pd.read_csv('../input/POSAS_2024_it_Ripartizioni.csv', sep=';', header=1)
 dati_regioni = pd.read_csv('../input/POSAS_2024_it_Regioni.csv', sep=';', header=1)
