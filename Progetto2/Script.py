@@ -51,7 +51,6 @@ dati_comuni = pd.read_csv('../input/POSAS_2024_it_Comuni.csv', sep=';', header=1
 #%% Unione dei dati con la dimensione appena creata e drop delle colonne da non utilizzare
 fct_residente_ripartizioni = dim_geografia.merge(dati_ripartizioni, left_on='den_geografica', right_on='Ripartizione', how='right')
 fct_residente_ripartizioni = fct_residente_ripartizioni.drop(['parent_id', 'tipo_geografico', 'cod_geografico', 'den_geografica', 'Codice ripartizione', 'Ripartizione'], axis=1)
-fct_residente_ripartizioni.head()
 # %% Come per ripartizione ma controllando le regioni con id nullo, non corrispondenze
 fct_residente_regioni = dim_geografia.merge(dati_regioni, left_on='den_geografica', right_on='Regione', how='right')
 fct_residente_regioni.info()
