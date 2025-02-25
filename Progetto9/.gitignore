@@ -1,0 +1,4 @@
+.venv
+docker_progetto/input_postgres_data
+docker_progetto/output_postgres_data
+.env
