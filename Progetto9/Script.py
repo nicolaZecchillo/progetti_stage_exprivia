@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 
 #%% Dotenv permette di recuperare le variabili d'ambiente da un file .env
-load_dotenv()
+load_dotenv("../.env")
 
 INPUT_DB_HOST = os.getenv("INPUT_DB_HOST")
 INPUT_DB_NAME = os.getenv("INPUT_DB_NAME")

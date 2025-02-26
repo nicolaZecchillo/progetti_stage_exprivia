@@ -108,7 +108,7 @@ where a."Airport ID" is null;
 -- 483
 
 -- Elenco rotte con aeroporti di partenza non presenti o non aventi corrispondenza nella tabella airplanes
-SELECT distinct r."Source airport ID", r."Source airport" 
+SELECT distinct r."Source airport ID"
 FROM air.routes r
 full join air.airports a
 on r."Source airport ID" = a."Airport ID"::text
@@ -117,7 +117,7 @@ order by 1
 ;
 
 -- Esempio di airport ID presente in routes e non in airports
-select * from airports a
+select * from air.airports a
 where "Airport ID" = '2611'
 
 ------- Stesso discorso da fare su aeroporti di destinazione
@@ -137,10 +137,10 @@ where a."Airport ID" is null;
 -- 488
 
 -- Elenco rotte con aeroporti di destinazione non presenti o non aventi corrispondenza nella tabella airplanes
-SELECT distinct r."Source airport ID" 
+SELECT distinct r."Destination airport ID" 
 FROM air.routes r
 full join air.airports a
-on r."Source airport ID" = a."Airport ID"::text
+on r."Destination airport ID" = a."Airport ID"::text
 where a."Airport ID" is null
 order by 1
 ;

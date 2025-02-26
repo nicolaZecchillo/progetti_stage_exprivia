@@ -97,7 +97,7 @@ fct_residente = fct_residente.sort_values(by=['id','Età'])
 
 #%% Dotenv permette di recuperare le variabili d'ambiente da un file .env, in qiesto caso quello del Progetto9 in cui viengono
 # inficati i criteri di connessione al db input
-load_dotenv("../Progetto9/.env")
+load_dotenv("../.env")
 
 INPUT_DB_HOST = os.getenv("INPUT_DB_HOST")
 INPUT_DB_NAME = os.getenv("INPUT_DB_NAME")
