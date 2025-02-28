@@ -189,12 +189,11 @@ ADD CONSTRAINT PK_airlines PRIMARY KEY ("Airline ID");
 ALTER TABLE air.airports 
 ADD CONSTRAINT PK_airports PRIMARY KEY ("Airport ID");
 
+drop table air.routes_corretta
+
 CREATE TABLE air.routes_corretta (
-    "airline" TEXT,
     "Airline ID" INT,
-    "Source airport" TEXT,
     "Source airport ID" INT,
-    "Destination airport" TEXT,
     "Destination airport ID" INT,
     "codeshare" TEXT,
     "stops" INT,
@@ -206,12 +205,10 @@ CREATE TABLE air.routes_corretta (
 
 INSERT INTO air.routes_corretta
 	select
-		"airline",
 		CASE 
 	        WHEN "Airline ID" = 'N' THEN -1 
 	        ELSE "Airline ID"::INT
 	    END AS "Airline ID",
-		"Source airport",
 		CASE 
         	WHEN "Source airport ID" IN (SELECT distinct r."Source airport ID" 
 										FROM air.routes r
@@ -220,7 +217,6 @@ INSERT INTO air.routes_corretta
 										where a."Airport ID" is null) THEN -1 
         	ELSE "Source airport ID"::INT
     	END AS "Source airport ID",
-		"Destination airport",
 		CASE 
         	WHEN "Destination airport ID" IN (SELECT distinct r."Destination airport ID" 
 										FROM air.routes r

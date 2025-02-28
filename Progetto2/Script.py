@@ -1,16 +1,16 @@
 #%%
 import geopandas as gpd
 import pandas as pd
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 import pandas as pd
 from dotenv import load_dotenv
 import os 
 
 #%% Lettura shape file
-comuni_shp = gpd.read_file('../input/Com01012024_g/Com01012024_g_WGS84.shp')
-province_shp = gpd.read_file('../input/ProvCM01012024_g/ProvCM01012024_g_WGS84.shp')
-regioni_shp = gpd.read_file('../input/Reg01012024_g/Reg01012024_g_WGS84.shp')
-ripartizioni_shp = gpd.read_file('../input/RipGeo01012024_g/RipGeo01012024_g_WGS84.shp')
+comuni_shp = gpd.read_file('input/Com01012024_g/Com01012024_g_WGS84.shp')
+province_shp = gpd.read_file('input/ProvCM01012024_g/ProvCM01012024_g_WGS84.shp')
+regioni_shp = gpd.read_file('input/Reg01012024_g/Reg01012024_g_WGS84.shp')
+ripartizioni_shp = gpd.read_file('input/RipGeo01012024_g/RipGeo01012024_g_WGS84.shp')
 
 #%% Trasfromazione in df e aggiunta cod_geografico, tipo_geografico e parent_id
 ripartizioni = pd.DataFrame(ripartizioni_shp)
@@ -20,7 +20,7 @@ ripartizioni['tipo_geografico'] = 'Ripartizione'
 ripartizioni['parent_id'] = None
 num_ripartizioni = len(ripartizioni) #variabile per incrementare il calcolo del parent_id
 # %% Come per ripartizioni ma utilizzando il cile ISO_Regioni.csv per recuperare il codice ripartizione
-ISO_regioni = pd.read_csv('../input/ISO_Regioni.csv')
+ISO_regioni = pd.read_csv('input/ISO_Regioni.csv')
 
 regioni = pd.DataFrame(regioni_shp)
 regioni = regioni.merge(ISO_regioni, left_on='DEN_REG', right_on='DEN_REG', how='inner')
@@ -43,10 +43,10 @@ dim_geografia = pd.concat([ripartizioni, regioni, province, comuni], ignore_inde
 dim_geografia['id'] = range(1, len(dim_geografia) + 1)
 dim_geografia = dim_geografia[['id','parent_id','tipo_geografico','cod_geografico','den_geografica']]
 # %% Import dei dati per ogni divisione geografica
-dati_ripartizioni = pd.read_csv('../input/POSAS_2024_it_Ripartizioni.csv', sep=';', header=1)
-dati_regioni = pd.read_csv('../input/POSAS_2024_it_Regioni.csv', sep=';', header=1)
-dati_province = pd.read_csv('../input/POSAS_2024_it_Province.csv', sep=';', header=1)
-dati_comuni = pd.read_csv('../input/POSAS_2024_it_Comuni.csv', sep=';', header=1, na_values='', keep_default_na=False)
+dati_ripartizioni = pd.read_csv('input/POSAS_2024_it_Ripartizioni.csv', sep=';', header=1)
+dati_regioni = pd.read_csv('input/POSAS_2024_it_Regioni.csv', sep=';', header=1)
+dati_province = pd.read_csv('input/POSAS_2024_it_Province.csv', sep=';', header=1)
+dati_comuni = pd.read_csv('input/POSAS_2024_it_Comuni.csv', sep=';', header=1, na_values='', keep_default_na=False)
 
 #%% Unione dei dati con la dimensione appena creata e drop delle colonne da non utilizzare
 fct_residente_ripartizioni = dim_geografia.merge(dati_ripartizioni, left_on='den_geografica', right_on='Ripartizione', how='right')
@@ -97,7 +97,7 @@ fct_residente = fct_residente.sort_values(by=['id','Età'])
 
 #%% Dotenv permette di recuperare le variabili d'ambiente da un file .env, in qiesto caso quello del Progetto9 in cui viengono
 # inficati i criteri di connessione al db input
-load_dotenv("../.env")
+load_dotenv(".env")
 
 INPUT_DB_HOST = os.getenv("INPUT_DB_HOST")
 INPUT_DB_NAME = os.getenv("INPUT_DB_NAME")
@@ -114,7 +114,22 @@ database = INPUT_DB_NAME
 # Il metodo create_engine stabilisce una connessione al db attraverso le variabili create
 engine = create_engine(f"postgresql+psycopg2://{username}:{password}@{host}:{port}/{database}")
 
+with engine.connect() as connection:
+    connection.execute(text('DROP VIEW IF EXISTS "Dati_Italia"'))
+    connection.commit()
+
 # Si vanno a creare delle tabelle di db dei df strutturati in precedenza utilizzando il motore e con la clausola sostituisci se già esistentigit 
 dim_geografia.to_sql("dim_geografia", con=engine, if_exists="replace", index=False)
 fct_residente.to_sql("fct_residente", con=engine, if_exists="replace", index=False)
-# %%
+
+create_view_query = '''
+    CREATE VIEW "Dati_Italia" AS
+    SELECT f.*, d.parent_id, d.tipo_geografico, d.cod_geografico, d.den_geografica
+    FROM "dim_geografia" AS d
+    JOIN "fct_residente" AS f ON d.id = f.id
+    ORDER BY (d."id", "Età");
+'''
+
+with engine.connect() as connection:
+    connection.execute(text(create_view_query))
+    connection.commit()
