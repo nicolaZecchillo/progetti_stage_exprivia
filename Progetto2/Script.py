@@ -99,17 +99,11 @@ fct_residente = fct_residente.sort_values(by=['id','Età'])
 # inficati i criteri di connessione al db input
 load_dotenv(".env")
 
-INPUT_DB_HOST = os.getenv("INPUT_DB_HOST")
-INPUT_DB_NAME = os.getenv("INPUT_DB_NAME")
-INPUT_DB_USER = os.getenv("INPUT_DB_USER")
-INPUT_DB_PASSWORD = os.getenv("INPUT_DB_PASSWORD")
-INPUT_DB_PORT = int(os.getenv("INPUT_DB_PORT"))
-
-username = INPUT_DB_USER
-password = INPUT_DB_PASSWORD
-host = INPUT_DB_HOST
-port = INPUT_DB_PORT
-database = INPUT_DB_NAME
+username = os.getenv("INPUT_DB_HOST")
+password = os.getenv("INPUT_DB_NAME")
+host = os.getenv("INPUT_DB_USER")
+port = os.getenv("INPUT_DB_PASSWORD")
+database = int(os.getenv("INPUT_DB_PORT"))
 
 # Il metodo create_engine stabilisce una connessione al db attraverso le variabili create
 engine = create_engine(f"postgresql+psycopg2://{username}:{password}@{host}:{port}/{database}")

@@ -24,6 +24,7 @@ OUTPUT_DB_PORT = int(os.getenv("OUTPUT_DB_PORT"))
 create_table_query = """CREATE TABLE IF NOT EXISTS argomenti (
                             id INT PRIMARY KEY,
                             descrizione TEXT NOT NULL)"""
+                                                       
 
 db_operations.create_table(INPUT_DB_HOST, INPUT_DB_NAME, INPUT_DB_USER, INPUT_DB_PASSWORD, INPUT_DB_PORT, create_table_query)
 
@@ -42,7 +43,9 @@ insert_query = """
     ON CONFLICT (id) DO NOTHING;
 """
 
-db_operations.insert_data(INPUT_DB_HOST, INPUT_DB_NAME, INPUT_DB_USER, INPUT_DB_PASSWORD, INPUT_DB_PORT, insert_query, dati)
+struttura = ["id", "descrizione"]
+
+db_operations.insert_data(INPUT_DB_HOST, INPUT_DB_NAME, INPUT_DB_USER, INPUT_DB_PASSWORD, INPUT_DB_PORT, insert_query, dati, struttura)
 
 df = db_operations.read_data(INPUT_DB_HOST, INPUT_DB_NAME, INPUT_DB_USER, INPUT_DB_PASSWORD, INPUT_DB_PORT,
                              "SELECT * FROM argomenti;")
