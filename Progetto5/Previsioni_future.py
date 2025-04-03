@@ -33,8 +33,8 @@ def previsioning(df_modellato, anni_previsioni=4):
     
     return pivot
 
-df_temperatura = pd.read_csv('./Progetto5/output_finali/temperatura_completo.csv')
-df_precipitazioni = pd.read_csv('./Progetto5/output_finali/precipitazioni_completo.csv')
+df_temperatura = pd.read_csv('./Progetto5/output/temperatura_filled.csv')
+df_precipitazioni = pd.read_csv('./Progetto5/output/precipitazioni_filled.csv')
 
 temp_modellato = modeling(df_temperatura, 'Temperatura')
 temp_previsioni = previsioning(temp_modellato)
@@ -42,5 +42,5 @@ temp_previsioni = previsioning(temp_modellato)
 prec_modellato = modeling(df_precipitazioni, 'Precipitazioni')
 prec_previsioni = previsioning(prec_modellato)
 
-temp_previsioni.to_csv('./Progetto5/output_finali/temperatura_2022-2025.csv', index=False)
-prec_previsioni.to_csv('./Progetto5/output_finali/precipitazioni_2022-2025.csv', index=False)
+temp_previsioni.to_csv('./Progetto5/output/temperatura_2022-2025.csv', index=False)
+prec_previsioni.to_csv('./Progetto5/output/precipitazioni_2022-2025.csv', index=False)
