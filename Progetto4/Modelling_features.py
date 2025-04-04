@@ -56,4 +56,6 @@ df_2002_2023.to_csv('outputModelling/Popolazione_residente_2002-2023_features.cs
 # %%
 df_2015_2024 = df_2002_2024[df_2002_2024['Anno'] > 2014]
 df_2015_2024.to_csv('outputModelling/Popolazione_residente_2015-2024_features.csv', index=False)
+df_2019_2024 = df_2002_2024[df_2002_2024['Anno'] > 2018]
+df_2019_2024.to_csv('outputModelling/Popolazione_residente_2019-2024_features.csv', index=False)
 # %%
