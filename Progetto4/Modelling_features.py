@@ -59,3 +59,16 @@ df_2015_2024.to_csv('outputModelling/Popolazione_residente_2015-2024_features.cs
 df_2019_2024 = df_2002_2024[df_2002_2024['Anno'] > 2018]
 df_2019_2024.to_csv('outputModelling/Popolazione_residente_2019-2024_features.csv', index=False)
 # %%
+df_2030 = pd.read_csv('previsioni/Previsione_popolazione_2030.csv')
+
+df_melted = df_2030.melt(
+        id_vars=['Età', 'Sesso'], 
+        value_vars=df_2030.columns[2:], 
+        var_name='Anno', 
+        value_name='Totale')
+df_2030 =  df_melted[df_melted['Sesso'] != 'Totale']
+
+df_2030 = pd.concat([df_2002_2024, df_2030], axis=0)
+
+df_2030.to_csv('outputModelling/Popolazione_residente_2030_features.csv', index=False)
+# %%

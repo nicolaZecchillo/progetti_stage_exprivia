@@ -369,5 +369,147 @@ inner JOIN air.airports a2
  
 select count(*) from air.air_traffic 
 
+drop table air.routes;
+drop table air.airplanes;
+
 select distinct "Destination airport" from air.air_traffic a
 where "Destination Country" = 'Italy'
+
+select "Source City", "Destination City", route_id, "Airline Name" from air.air_traffic at2
+where "Source City" = 'Brindisi'
+
+CREATE TABLE air.flights (
+    flight_id SERIAL PRIMARY KEY,
+    route_id INTEGER NOT NULL,
+    numero_posti INTEGER NOT NULL CHECK (numero_posti > 0),
+    data_volo DATE NOT NULL,
+    orario_partenza TIME NOT NULL,
+    orario_arrivo TIME NOT NULL,
+    stato_volo VARCHAR(20) DEFAULT 'scheduled',
+    FOREIGN KEY (route_id) REFERENCES air.routes_corretta(route_id) ON DELETE cascade)
+   ;
+
+CREATE TABLE air.passengers (
+    passenger_id SERIAL PRIMARY KEY,
+    flight_id INTEGER NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    cognome VARCHAR(50) NOT NULL,
+    data_nascita DATE NOT NULL,
+    documento_identita VARCHAR(30) NOT NULL UNIQUE,
+    FOREIGN KEY (flight_id) REFERENCES air.flights(flight_id) ON DELETE CASCADE
+);
+
+CREATE OR REPLACE FUNCTION air.check_posti_disponibili()
+RETURNS TRIGGER AS $$
+DECLARE
+    posti_occupati INTEGER;
+    posti_totali INTEGER;
+BEGIN
+    SELECT COUNT(*) INTO posti_occupati
+    FROM air.passengers
+    WHERE flight_id = NEW.flight_id;
+
+    SELECT numero_posti INTO posti_totali
+    FROM air.flights
+    WHERE flight_id = NEW.flight_id;
+
+    IF posti_occupati >= posti_totali THEN
+        RAISE EXCEPTION 'Non ci sono più posti disponibili per il volo ID %', NEW.flight_id;
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_check_posti_disponibili
+BEFORE INSERT ON air.passengers
+FOR EACH ROW
+EXECUTE FUNCTION air.check_posti_disponibili();
+
+CREATE OR REPLACE FUNCTION air.capitalize_nome_cognome()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.nome := INITCAP(NEW.nome);
+    NEW.cognome := INITCAP(NEW.cognome);
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_capitalize_nome_cognome
+BEFORE INSERT OR UPDATE ON air.passengers
+FOR EACH ROW
+EXECUTE FUNCTION air.capitalize_nome_cognome();
+
+INSERT INTO air.flights (route_id, numero_posti, data_volo, orario_partenza, orario_arrivo, stato_volo) VALUES
+(32398, 180, '2025-05-01', '08:30', '11:00', 'scheduled'),
+(62662, 150, '2025-05-02', '13:15', '16:00', 'scheduled'),
+(3119, 200, '2025-05-03', '07:00', '09:30', 'scheduled'),
+(46006, 180, '2025-05-04', '19:45', '22:30', 'scheduled'),
+(65094, 160, '2025-05-05', '06:00', '08:45', 'scheduled'),
+(41315, 140, '2025-05-06', '15:10', '18:00', 'scheduled'),
+(56124, 180, '2025-05-07', '12:30', '15:15', 'scheduled'),
+(39353, 170, '2025-05-08', '09:00', '11:50', 'scheduled'),
+(13554, 190, '2025-05-09', '10:45', '13:20', 'scheduled'),
+(1890, 150, '2025-05-10', '17:00', '19:30', 'scheduled'),
+(12014, 160, '2025-05-11', '08:20', '10:50', 'scheduled'),
+(51969, 175, '2025-05-12', '11:15', '14:00', 'scheduled'),
+(3119, 180, '2025-05-13', '06:45', '09:20', 'scheduled'),
+(23457, 165, '2025-05-14', '13:00', '15:40', 'scheduled'),
+(9310, 185, '2025-05-15', '07:30', '10:15', 'scheduled'),
+(48475, 190, '2025-05-16', '18:50', '21:35', 'scheduled'),
+(26354, 200, '2025-05-17', '16:00', '18:45', 'scheduled'),
+(42729, 160, '2025-05-18', '09:30', '12:10', 'scheduled'),
+(4134, 170, '2025-05-19', '05:15', '08:00', 'scheduled'),
+(13081, 2, '2025-05-20', '14:20', '17:10', 'scheduled');
+
+INSERT INTO air.passengers (flight_id, nome, cognome, data_nascita, documento_identita) VALUES
+(1, 'Luca', 'Bianchi', '1990-01-15', 'AB123456'),
+(1, 'Maria', 'Rossi', '1985-07-22', 'CD789012'),
+(1, 'Marco', 'Verdi', '1995-03-11', 'EF345678'),
+(2, 'Anna', 'Neri', '1992-10-05', 'GH901234'),
+(2, 'Giulia', 'Moretti', '1998-06-19', 'IJ567890'),
+(3, 'Stefano', 'Gallo', '1980-04-12', 'KL123789'),
+(3, 'Paolo', 'Conti', '1975-09-25', 'MN456123'),
+(4, 'Simona', 'Russo', '1988-12-30', 'OP789345'),
+(4, 'Davide', 'Ferrari', '1991-02-17', 'QR012678'),
+(5, 'Francesca', 'Greco', '1993-11-03', 'ST345901'),
+(5, 'Giorgio', 'Marino', '1986-08-08', 'UV678234'),
+(6, 'Alessia', 'Barbieri', '1997-05-14', 'WX901567'),
+(6, 'Valerio', 'Costa', '1990-03-23', 'YZ234890'),
+(7, 'Chiara', 'De Luca', '1989-10-10', 'AA345612'),
+(7, 'Luigi', 'Rinaldi', '1978-06-06', 'BB678945'),
+(8, 'Roberta', 'Leone', '1994-01-21', 'CC901278'),
+(8, 'Andrea', 'Palmieri', '1982-09-09', 'DD234561'),
+(9, 'Martina', 'Orlando', '1996-07-07', 'EE567894'),
+(9, 'Fabio', 'Vitale', '1987-03-19', 'FF890127'),
+(10, 'Silvia', 'Longo', '1991-12-01', 'GG123450'),
+(10, 'Enrico', 'Messina', '1983-02-02', 'HH456783'),
+(11, 'Sofia', 'Negri', '1999-04-04', 'II789016'),
+(11, 'Matteo', 'Parisi', '1984-11-11', 'JJ012349'),
+(12, 'Beatrice', 'Fiore', '1990-08-18', 'KK345682'),
+(12, 'Lorenzo', 'Amato', '1979-05-20', 'LL678915'),
+(13, 'Alessandro', 'Grasso', '1985-10-28', 'MM901248'),
+(13, 'Elisa', 'Sartori', '1993-06-15', 'NN234581'),
+(14, 'Daniele', 'Fontana', '1986-01-09', 'OO567894'),
+(14, 'Camilla', 'Rizzi', '1992-03-13', 'PP890127'),
+(15, 'Riccardo', 'Testa', '1988-07-07', 'QQ123450'),
+(15, 'Eleonora', 'Martini', '1997-11-17', 'RR456783'),
+(16, 'Gabriele', 'Bellini', '1995-09-09', 'SS789016'),
+(16, 'Ilaria', 'De Santis', '1990-12-24', 'TT012349'),
+(17, 'Emanuele', 'Caputo', '1981-02-02', 'UU345682'),
+(17, 'Arianna', 'Pellegrini', '1996-06-06', 'VV678915'),
+(18, 'Tommaso', 'Sanna', '1987-10-10', 'WW901248'),
+(18, 'Serena', 'D’Angelo', '1994-08-08', 'XX234581'),
+(19, 'Federico', 'Valenti', '1989-04-30', 'YY567894'),
+(19, 'Veronica', 'Gatti', '1993-02-02', 'ZZ890127'),
+(20, 'Michele', 'Colombo', '1983-06-06', 'AAA123450'),
+(20, 'Noemi', 'Serra', '1991-01-01', 'BBB456783'),
+(1, 'Elena', 'Pagani', '1995-12-12', 'CCC789016'),
+(2, 'Samuele', 'Basili', '1998-03-03', 'DDD012349'),
+(3, 'Claudia', 'Donati', '1990-07-07', 'EEE345682'),
+(4, 'Stefania', 'Locatelli', '1985-09-09', 'FFF678915'),
+(5, 'Nicola', 'Manzoni', '1977-11-11', 'GGG901248'),
+(6, 'Giada', 'Sartore', '1992-10-10', 'HHH234581'),
+(7, 'Massimo', 'Nobili', '1986-04-04', 'III567894'),
+(8, 'Patrizia', 'Vitali', '1983-08-08', 'JJJ890127');
+
