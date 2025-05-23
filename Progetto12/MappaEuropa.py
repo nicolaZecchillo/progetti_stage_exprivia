@@ -1,7 +1,9 @@
 import geopandas as gpd
 import pandas as pd
 from shapely.geometry import mapping
+from shapely.ops import unary_union
 import json
+from shapely.geometry import Polygon, MultiPolygon
 
 def transcontinental_country(country_map, european_povinces, ISO, NAME_1):
     
@@ -107,7 +109,18 @@ province_francia_europea = [
 
 france_superset = gpd.read_file('input/france_regions.geojson')
 
-france_final = transcontinental_country(france_superset, province_francia_europea, "FR", "France")
+france_continental = transcontinental_country(france_superset, province_francia_europea, "FR", "France")
+
+poligoni_untiti = unary_union(france_continental.geometry)
+
+if isinstance(poligoni_untiti, Polygon):
+    poligoni_untiti = Polygon(poligoni_untiti.exterior)
+elif isinstance(poligoni_untiti, MultiPolygon):
+    poligoni_untiti = MultiPolygon([Polygon(poligono.exterior) for poligono in poligoni_untiti.geoms])
+
+france_final = gpd.GeoDataFrame(geometry=[poligoni_untiti], crs=france_continental.crs)
+
+france_final.to_file("output/France_Europea.geojson", driver="GeoJSON")
 
 
 mappa_europa = pd.concat([
